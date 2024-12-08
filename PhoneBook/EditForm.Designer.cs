@@ -260,6 +260,7 @@
             button3.TabIndex = 15;
             button3.Text = "Сохранить и закрыть";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // EditForm
             // 

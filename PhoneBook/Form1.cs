@@ -48,6 +48,8 @@ namespace PhoneBook
                 if (editForm.ShowDialog() == DialogResult.OK)
                 {
                     // сохранение бд
+                    // повторный вызов поиска
+                    button1_Click(sender, null);
                 }
             }
         }

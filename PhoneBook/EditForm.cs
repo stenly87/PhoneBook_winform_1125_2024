@@ -76,7 +76,26 @@ namespace PhoneBook
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            
+            openFileDialog.Filter = "Image|*.png";
+            openFileDialog.Title = "Выберите изображение";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                human.ImagePath = openFileDialog.FileName;
+                pictureBox1.Load(openFileDialog.FileName);
+            }
+        }
+
+        // сохранить и закрыть
+        private void button3_Click(object sender, EventArgs e)
+        {
+            human.FirstName = textFirstName.Text;
+            human.LastName = textLastName.Text;
+            human.PatronymicName = textPatronymic.Text;
+            human.Address = textAddress.Text;
+            if (db != null)
+                db.Add(human);
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }
